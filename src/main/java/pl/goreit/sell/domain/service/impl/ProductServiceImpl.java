@@ -5,7 +5,7 @@ import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 import pl.goreit.api.generated.ProductResponse;
 import pl.goreit.sell.domain.service.ProductService;
-import pl.goreit.sell.instrastructure.ProductRepo;
+import pl.goreit.sell.instrastructure.mongo.ProductRepo;
 
 import java.util.List;
 import java.util.stream.Collectors;

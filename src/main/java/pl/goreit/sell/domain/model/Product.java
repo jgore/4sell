@@ -12,6 +12,7 @@ public class Product {
 
     @Id
     private String id;
+    private String categoryId;
     private String name;
     private BigDecimal price;
     private Status status = Status.ACTIVE;
@@ -21,6 +22,18 @@ public class Product {
     public Product(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public LocalDateTime getCreationDate() {
+        return creationDate;
     }
 
     public String getName() {
