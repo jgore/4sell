@@ -1,0 +1,37 @@
+version: '3.6'
+services:
+
+#  4sell-service:
+#    image: localhost:5000/4sell
+#    volumes:
+#      - 4sell-service-data:/root
+#    ports:
+#      - 8080:8080
+#    depends_on:
+#      - 'mongodb'
+#    networks:
+#      - 4sell-internal
+#    environment:
+#      SPRING_PROFILES_ACTIVE: "local"
+
+  mongodb:
+    image: mongo:4.0.0
+    volumes:
+      -  4sell-mongodb-data:/data/db
+    ports:
+      - 27017:27017
+    command: mongod
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+
+networks:
+  4sell-internal:
+
+
+volumes:
+  4sell-service-data:
+  4sell-mongodb-data:
+
+
+
