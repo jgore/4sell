@@ -12,24 +12,30 @@ public class Product {
 
     @Id
     private String id;
-    private String categoryId;
+    private String categoryName;
     private String name;
     private BigDecimal price;
-    private Status status = Status.ACTIVE;
+    private Status status = Status.AVAILABLE;
 
     private LocalDateTime creationDate;
 
-    public Product(String name, BigDecimal price) {
+    public Product(String categoryName, String name, BigDecimal price) {
+        this.categoryName = categoryName;
         this.name = name;
         this.price = price;
+
     }
 
     public String getId() {
         return id;
     }
 
-    public String getCategoryId() {
-        return categoryId;
+    public void assigntoCategory(String categoryId) {
+        this.categoryName = categoryId;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
     }
 
     public LocalDateTime getCreationDate() {
@@ -77,6 +83,6 @@ public class Product {
     }
 
     public enum Status {
-        NONE, ACTIVE, ARCHIVED
+        AVAILABLE, SOLD, ARCHIVED
     }
 }

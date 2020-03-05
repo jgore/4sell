@@ -10,6 +10,6 @@ public class ProductConverter implements Converter<Product, ProductResponse> {
 
     @Override
     public ProductResponse convert(Product product) {
-        return new ProductResponse(product.getName(), product.getPrice().toString(), product.getStatus().name());
+        return new ProductResponse(product.getCategoryName(), product.getName(), product.getPrice().toString());
     }
 }

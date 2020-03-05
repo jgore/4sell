@@ -1,13 +1,12 @@
 package pl.goreit.sell.domain.service;
 
 import pl.goreit.api.generated.CategoryResponse;
-import pl.goreit.sell.domain.model.Category;
+import pl.goreit.sell.domain.DomainException;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface CategoryService {
-    Optional<CategoryResponse> findByName(String name);
+    CategoryResponse findByNameWithDetails(String name) throws DomainException;
 
     List<CategoryResponse> findAll();
 }

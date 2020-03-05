@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    private ConversionService conversionService;
+    private ConversionService sellConversionService;
 
     @Autowired
     private ProductRepo productRepo;
@@ -22,7 +22,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductResponse> getAll() {
         return productRepo.findAll().stream()
-                .map(product -> conversionService.convert(product, ProductResponse.class))
+                .map(product -> sellConversionService.convert(product, ProductResponse.class))
                 .collect(Collectors.toList());
     }
 }
